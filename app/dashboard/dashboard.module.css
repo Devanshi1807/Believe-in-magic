@@ -1,0 +1,221 @@
+/* app/dashboard/dashboard.module.css */
+
+.container {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  background-color: #080c15;
+  color: #f1f5f9;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  overflow: hidden;
+}
+
+/* --- Calm Clinical Sidebar --- */
+.sidebar {
+  width: 290px;
+  min-width: 290px;
+  background: #0d121f;
+  border-right: 1px solid #1a2236;
+  display: flex;
+  flex-direction: column;
+}
+
+.brandCard {
+  padding: 1.6rem 1.5rem 1.2rem 1.5rem;
+  border-bottom: 1px solid #1a2236;
+}
+
+.brandTitle {
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: #f8fafc;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.brandSubtitle {
+  font-size: 0.76rem;
+  color: #38bdf8;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-top: 0.35rem;
+}
+
+.patientPill {
+  margin-top: 1rem;
+  background: #141c2e;
+  border: 1px solid #23304d;
+  border-radius: 10px;
+  padding: 0.65rem 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.patientAvatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #2563eb;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 0.85rem;
+}
+
+.patientInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.patientName {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.patientMeta {
+  font-size: 0.72rem;
+  color: #94a3b8;
+}
+
+/* Nav Menu */
+.navSection {
+  flex: 1;
+  padding: 1.25rem 0.85rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  overflow-y: auto;
+}
+
+.navSectionLabel {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #64748b;
+  padding: 0.5rem 0.85rem;
+}
+
+.navButton {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.85rem 1rem;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #94a3b8;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.2s ease;
+}
+
+.navButton:hover {
+  background: #141c2e;
+  color: #f8fafc;
+}
+
+.navButtonActive {
+  background: #17233d;
+  color: #38bdf8;
+  font-weight: 700;
+  border-left: 4px solid #38bdf8;
+}
+
+.navIcon {
+  font-size: 1.2rem;
+}
+
+/* Assigned Doctor Footer */
+.doctorFooter {
+  padding: 1rem 1.25rem;
+  border-top: 1px solid #1a2236;
+  background: #0a0e18;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.doctorAvatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #38bdf8, #818cf8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+
+.doctorDetails {
+  display: flex;
+  flex-direction: column;
+}
+
+.doctorName {
+  font-size: 0.84rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.doctorSpecialty {
+  font-size: 0.7rem;
+  color: #2dd4bf;
+  font-weight: 600;
+}
+
+/* --- Main View Container --- */
+.mainContent {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  background: #080c15;
+  overflow-y: auto;
+}
+
+.topBar {
+  padding: 1.1rem 2.25rem;
+  border-bottom: 1px solid #161e30;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #0b0f1a;
+}
+
+.pageHeading {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.topBarBadges {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.statusBadge {
+  background: rgba(45, 212, 191, 0.12);
+  border: 1px solid rgba(45, 212, 191, 0.3);
+  color: #2dd4bf;
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 0.35rem 0.8rem;
+  border-radius: 9999px;
+}
+
+.workspaceArea {
+  flex: 1;
+  padding: 2rem 2.5rem;
+  overflow-y: auto;
+}

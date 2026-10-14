@@ -1,0 +1,78 @@
+/* app/therapy/components/Sidebar.module.css */
+
+.sidebar {
+  width: 280px;
+  min-width: 280px;
+  background-color: #070913;
+  border-right: 1px solid #181d33;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.brandHeader {
+  padding: 1.6rem 1.5rem 1.1rem 1.5rem;
+  border-bottom: 1px solid #181d33;
+}
+
+.brandTitle {
+  font-size: 1.55rem;
+  font-weight: 900;
+  letter-spacing: -0.01em;
+  background: linear-gradient(90deg, #38bdf8 0%, #c084fc 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.brandEdition {
+  font-size: 0.85rem;
+  color: #a855f7;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  margin-top: 0.35rem;
+}
+
+.sectionHeader {
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  color: #64748b;
+  letter-spacing: 0.1em;
+  padding: 1.4rem 1.5rem 0.65rem 1.5rem;
+  font-weight: 800;
+}
+
+.navMenu {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  padding: 0.4rem 0.9rem;
+  gap: 0.4rem;
+}
+
+.navItem {
+  display: flex;
+  align-items: center;
+  padding: 0.85rem 1.1rem;
+  color: #94a3b8;
+  font-size: 1.05rem;
+  font-weight: 600;
+  border-radius: 10px;
+  background: transparent;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.navItem:hover {
+  background-color: #12172f;
+  color: #ffffff;
+}
+
+.navItemActive {
+  background-color: #1e2547;
+  color: #38bdf8;
+  font-weight: 800;
+}
