@@ -1,56 +1,783 @@
 /* app/therapy/therapy.module.css */
 
-.layout {
+.container {
   display: flex;
   height: 100vh;
   width: 100vw;
-  background-color: #070913;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  color: #ffffff;
+  background: #0f1629;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+  color: #f8fafc;
   overflow: hidden;
 }
 
-.mainArea {
-  flex: 1;
-  min-width: 0;
-  width: 100%;
+/* =========================================================
+   1. LEFT SIDEBAR
+   ========================================================= */
+.sidebar {
+  width: 255px;
+  min-width: 255px;
+  background: #0b1120;
+  border-right: 1px solid rgba(255, 255, 255, 0.06);
   display: flex;
   flex-direction: column;
   height: 100%;
-  overflow: hidden;
 }
 
-.topBar {
-  width: 100%;
+.brandHeader {
+  padding: 1.5rem 1.25rem 1.2rem 1.25rem;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
-  padding: 1rem 2.5rem;
-  background: #070913;
-  border-bottom: 1px solid #181d33;
+  gap: 0.75rem;
 }
 
-.iconGroup {
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-  font-size: 1.4rem;
-  color: #94a3b8;
-  cursor: pointer;
-}
-
-.iconGroup span:hover {
-  color: #38bdf8;
-  transform: scale(1.1);
-  transition: all 0.2s ease;
-}
-
-.placeholderSection {
-  flex: 1;
+.brandLogo {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #60a5fa 0%, #1e3a8a 70%);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #64748b;
   font-size: 1.3rem;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.4);
+}
+
+.brandTitle {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.01em;
+}
+
+.brandStar {
+  color: #93c5fd;
+  font-size: 0.85rem;
+}
+
+.brandTagline {
+  font-size: 0.68rem;
+  color: #64748b;
+  margin-top: 0.15rem;
+}
+
+.navScrollArea {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0.5rem 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.navSectionLabel {
+  font-size: 0.68rem;
+  font-weight: 800;
+  color: #475569;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.9rem 0.75rem 0.35rem 0.75rem;
+}
+
+.navItem {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.6rem 0.85rem;
+  border-radius: 10px;
+  background: transparent;
+  border: none;
+  color: #94a3b8;
+  font-size: 0.88rem;
   font-weight: 600;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.15s ease;
+}
+
+.navItem:hover {
+  background: #141d33;
+  color: #ffffff;
+}
+
+.navItemActive {
+  background: #2563eb;
+  color: #ffffff;
+  font-weight: 700;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.4);
+}
+
+.navIcon {
+  font-size: 1rem;
+  width: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Bottom Night Sky Motivational Card */
+.sidebarFooterCard {
+  margin: 0.85rem;
+  padding: 1.1rem;
+  background: radial-gradient(circle at 100% 0%, #1e3a8a 0%, #0d172e 100%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  color: #ffffff;
+  position: relative;
+}
+
+.sidebarFooterStar {
+  font-size: 0.85rem;
+  color: #60a5fa;
+  margin-bottom: 0.3rem;
+}
+
+.sidebarFooterHeading {
+  font-size: 0.86rem;
+  font-weight: 700;
+  line-height: 1.35;
+  color: #ffffff;
+}
+
+.sidebarFooterSub {
+  font-size: 0.74rem;
+  color: #93c5fd;
+  margin-top: 0.25rem;
+}
+
+.sidebarFooterHeart {
+  font-size: 0.75rem;
+  color: #818cf8;
+  margin-top: 0.5rem;
+}
+
+/* =========================================================
+   2. MAIN CONTENT (Navy Twilight Background)
+   ========================================================= */
+.mainContent {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  background: #0f1629;
+  overflow-y: auto;
+}
+
+/* Top Dark Header */
+.topHeader {
+  padding: 1.25rem 2.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #0f1629;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.greetingBox {
+  display: flex;
+  flex-direction: column;
+}
+
+.greetingTitle {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.greetingName {
+  font-style: italic;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.greetingSubtitle {
+  font-size: 0.82rem;
+  color: #94a3b8;
+  margin-top: 0.2rem;
+}
+
+.topHeaderActions {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.backBtn {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #93c5fd;
+  padding: 0.45rem 0.95rem;
+  border-radius: 9px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.backBtn:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+}
+
+.notificationIcon {
+  font-size: 1.2rem;
+  color: #cbd5e1;
+  cursor: pointer;
+  position: relative;
+}
+
+.notificationBadge {
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  width: 7px;
+  height: 7px;
+  background: #ef4444;
+  border-radius: 50%;
+}
+
+.userAvatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #3b82f6;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 0.92rem;
+}
+
+/* =========================================================
+   3. SCROLLABLE WORKSPACE
+   ========================================================= */
+.scrollBody {
+  flex: 1;
+  padding: 1.75rem 2.25rem 3rem 2.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  overflow-y: auto;
+}
+
+/* Hero Banner (Sky-Blue Gradient Card with Illustration) */
+.heroBanner {
+  background: linear-gradient(135deg, #dbeafe 0%, #ede9fe 55%, #e0e7ff 100%);
+  border-radius: 22px;
+  padding: 1.85rem 2.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  position: relative;
+  overflow: hidden;
+}
+
+.heroLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  max-width: 65%;
+  z-index: 2;
+}
+
+.heroTitleRow {
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+}
+
+.heroIconCircle {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: #1e3a8a;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  box-shadow: 0 6px 16px rgba(30, 58, 138, 0.35);
+}
+
+.heroHeaderTexts {
+  display: flex;
+  flex-direction: column;
+}
+
+.heroMainTitle {
+  font-size: 1.55rem;
+  font-weight: 800;
+  color: #1e1b4b;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.recommendedPill {
+  background: #ffffff;
+  color: #2563eb;
+  border-radius: 9999px;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.72rem;
+  font-weight: 800;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.heroSubtext {
+  font-size: 0.95rem;
+  color: #4338ca;
+  font-weight: 600;
+  margin-top: 0.2rem;
+}
+
+/* Parameters Row */
+.heroParamsRow {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(8px);
+  padding: 0.75rem 1.4rem;
+  border-radius: 14px;
+  width: fit-content;
+}
+
+.paramItem {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.paramIcon {
+  font-size: 1.15rem;
+  color: #4f46e5;
+}
+
+.paramTexts {
+  display: flex;
+  flex-direction: column;
+}
+
+.paramLabel {
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  color: #64748b;
+  font-weight: 700;
+}
+
+.paramValue {
+  font-size: 0.88rem;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+/* Right Side Illustration Scene */
+.heroArtSide {
+  width: 170px;
+  height: 120px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.artHill {
+  position: absolute;
+  bottom: -20px;
+  right: -10px;
+  width: 140px;
+  height: 70px;
+  background: #c7d2fe;
+  border-radius: 100px 100px 0 0;
+}
+
+.characterBody {
+  width: 72px;
+  height: 72px;
+  background: #ffffff;
+  border: 4px solid #4338ca;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-shadow: 0 8px 20px rgba(67, 56, 202, 0.25);
+  z-index: 2;
+}
+
+.characterPupil {
+  width: 36px;
+  height: 36px;
+  background: #2563eb;
+  border-radius: 50%;
+  position: relative;
+}
+
+.characterLight {
+  width: 10px;
+  height: 10px;
+  background: #ffffff;
+  border-radius: 50%;
+  position: absolute;
+  top: 6px;
+  left: 6px;
+}
+
+.characterStar {
+  position: absolute;
+  right: -14px;
+  bottom: 0px;
+  font-size: 1.2rem;
+  z-index: 3;
+}
+
+/* =========================================================
+   4. TWO-COLUMN GRID: PROTOCOLS vs RIGHT WIDGETS
+   ========================================================= */
+.contentGrid {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 1.75rem;
+  align-items: start;
+}
+
+/* Left Column */
+.leftColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+
+/* About Card (White on Dark Canvas) */
+.aboutCard {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 1.35rem 1.6rem;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+}
+
+.aboutHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 0.4rem;
+}
+
+.aboutText {
+  font-size: 0.9rem;
+  color: #475569;
+  line-height: 1.55;
+}
+
+/* Protocols Section */
+.protocolsSection {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.protocolsTitleRow {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.protocolsList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+/* Protocol Card */
+.protocolItem {
+  background: #ffffff;
+  border: 1px solid transparent;
+  border-radius: 16px;
+  padding: 1.15rem 1.4rem;
+  display: flex;
+  align-items: center;
+  gap: 1.15rem;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.protocolItemActive {
+  background: #ffffff;
+  border: 2px solid #38bdf8;
+  box-shadow: 0 6px 20px rgba(56, 189, 248, 0.25);
+}
+
+.protocolItem:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.protocolIconCircle {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.35rem;
+  flex-shrink: 0;
+}
+
+.protocolDetails {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.protocolHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.protocolTitle {
+  font-size: 0.98rem;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.difficultyPill {
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.15rem 0.6rem;
+  border-radius: 9999px;
+}
+
+.protocolDesc {
+  font-size: 0.84rem;
+  color: #64748b;
+}
+
+.protocolChevron {
+  font-size: 1.25rem;
+  color: #94a3b8;
+  font-weight: 700;
+  transition: transform 0.2s;
+}
+
+.protocolItem:hover .protocolChevron {
+  transform: translateX(4px);
+  color: #2563eb;
+}
+
+/* =========================================================
+   5. RIGHT COLUMN (WIDGETS)
+   ========================================================= */
+.rightColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+}
+
+/* 1. Progress Card (Deep Midnight Blue) */
+.progressCard {
+  background: #172554;
+  border-radius: 20px;
+  padding: 1.5rem;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  position: relative;
+}
+
+.progressCardTitle {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.progressBody {
+  display: flex;
+  align-items: center;
+  gap: 1.15rem;
+}
+
+.circularGauge {
+  width: 74px;
+  height: 74px;
+  border-radius: 50%;
+  background: conic-gradient(#38bdf8 0% 40%, rgba(255, 255, 255, 0.12) 40% 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.circularGaugeInner {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #172554;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.progressCardText {
+  font-size: 0.82rem;
+  color: #bfdbfe;
+  line-height: 1.45;
+  flex: 1;
+}
+
+.progressCardArrow {
+  position: absolute;
+  bottom: 1.25rem;
+  right: 1.25rem;
+  font-size: 1.1rem;
+  color: #38bdf8;
+}
+
+/* 2. Quick Tips Card (Lavender Box) */
+.tipsCard {
+  background: #f5f3ff;
+  border-radius: 18px;
+  padding: 1.35rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.tipsHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #4c1d95;
+}
+
+.tipsList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.tipItem {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: #5b21b6;
+}
+
+.tipCheck {
+  color: #7c3aed;
+  font-weight: 800;
+}
+
+/* 3. Quote Card (Mint Green) */
+.quoteCard {
+  background: #ecfdf5;
+  border-radius: 18px;
+  padding: 1.35rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  position: relative;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.quoteLeaf {
+  font-size: 1.25rem;
+}
+
+.quoteText {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #065f46;
+  line-height: 1.45;
+}
+
+.quoteHeart {
+  position: absolute;
+  bottom: 1.25rem;
+  right: 1.25rem;
+  color: #10b981;
+  font-size: 1.1rem;
+}
+
+/* 4. Next Session Card (Periwinkle Card) */
+.nextSessionCard {
+  background: #eff6ff;
+  border-radius: 18px;
+  padding: 1.35rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.nextSessionHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: #1e40af;
+}
+
+.nextSessionTitle {
+  font-size: 1rem;
+  font-weight: 800;
+  color: #1e293b;
+}
+
+.nextSessionTime {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.82rem;
+  color: #64748b;
+  font-weight: 600;
+}
+
+.startNowBtn {
+  margin-top: 0.35rem;
+  background: #2563eb;
+  color: #ffffff;
+  border: none;
+  border-radius: 11px;
+  padding: 0.8rem;
+  font-size: 0.92rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35);
+  transition: all 0.2s;
+}
+
+.startNowBtn:hover {
+  background: #1d4ed8;
+  transform: translateY(-1px);
 }
